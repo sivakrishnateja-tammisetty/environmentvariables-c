@@ -1,0 +1,62 @@
+*WHAT IS ENVIRONMENT VARIABLES AND HOW DO I USE THEM(GET,SET):
+------------------------------------------------------------
+
+
+
+*for any user like linux,mac os and any unix style os ,open terminal and type env.
+  Eg : Terminal     >>>>env
+                   Note:It will print a bunch of variables(environment variables).
+
+
+
+
+* Each environment variable has a name and value.
+         NAME = VALUE   ==>bascially names are in all uppercase & values should be strings.
+*environment variables are used to communicate with programms how the machine is setup and sometimes to control the behaviour of the programs.
+
+
+
+*IF C PRGM WANTS TO READ ENV VARIABLES USE(getenv)?
+  Terminal :   >> man getenv
+
+  just pass variable name whatever we want inside that getenv() function.
+
+
+
+  Eg1:
+  #include<stdio.h>
+#include<stdlib.h>
+int main() {
+    char* value;
+    value=getenv("HOME");
+    printf("HOME =%s\n",value);
+
+    return 0;
+}
+
+
+o/p:
+HOME =/home/damner/
+
+
+
+
+Eg2:
+#include<stdio.h>
+#include<stdlib.h>
+int main() {
+    char* value;
+    value=getenv("HOME");
+    printf("HOME =%s\n",value);
+    value=getenv("USER");
+    printf("USER =%s\n",value);
+    value=getenv("PASSWORD");
+    printf("PASSWORD =%s\n",value);
+
+    return 0;
+}
+
+o/p:
+HOME =/home/damner/
+USER =damner
+PASSWORD =(null)
